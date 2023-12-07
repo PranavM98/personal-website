@@ -6,6 +6,7 @@ body {
 }
 
 .container {
+    width: 80%;
     margin: auto;
     overflow: hidden;
 }
@@ -37,7 +38,9 @@ header h1 {
 }
 
 .table-image img {
-    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
