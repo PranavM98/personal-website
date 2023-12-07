@@ -38,6 +38,7 @@ header h1 {
 }
 
 .table-image img {
+    display: block;
     width: 100%;
     height: auto;
     border: 1px solid #ddd;
@@ -52,7 +53,7 @@ header h1 {
 
 .table-image figcaption {
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: italic;
     color: #333;
     text-align: center;
 }
