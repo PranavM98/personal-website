@@ -39,7 +39,6 @@ header h1 {
 
 .table-image img {
     height: auto;
-    width: 100%;
     max-width: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
