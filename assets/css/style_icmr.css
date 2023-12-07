@@ -20,6 +20,12 @@ header {
     border-bottom: #bbb 1px solid;
 }
 
+.table-gallery {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 800px; /* Maximum width for larger screens */
+    margin: auto;
+    overflow: hidden;
+}
 
 
 .table-image {
