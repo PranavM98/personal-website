@@ -39,7 +39,7 @@ header h1 {
 
 .table-image img {
     display: block;
-
+    object-fit: contain;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
