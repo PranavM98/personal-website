@@ -27,6 +27,7 @@ header h1 {
     color: rgb(64, 72, 194);
     font-size: 18px;
     margin-top: 0;
+    font-weight: normal; /* This makes the text not bold */
 }
 
 img {
