@@ -2,56 +2,39 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 800px; /* Maximum width for larger screens */
-    margin: auto;
-    overflow: hidden;
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0; /* Reduced padding */
+figure {
+    width: 100%;
+    max-width: 600px; /* Maximum width of the image */
+    margin: 0 auto; /* Center the figure */
+    margin-bottom: 20px; /* Space between figures */
+}
+
+figure img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border: 0;
+}
+
+figcaption {
     text-align: center;
-    border-bottom: #bbb 1px solid;
-}
-
-.table-gallery {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 800px; /* Maximum width for larger screens */
-    margin: auto;
-    overflow: hidden;
-}
-
-
-.table-image {
-    width: 100%; /* Full width */
-}
-
-.table-image img {
-    height: auto;
-    max-width: 100%; /* Ensures image is not larger than its container */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.table-image figcaption {
-    margin-top: 1em; /* Relative unit for margin */
-    font-weight: italic;
+    margin-top: 8px;
     color: #333;
-    text-align: center;
+    font-style: italic;
 }
 
-@media only screen and (min-width: 600px) {
-    .container {
-        width: 80%; /* Adjust width for larger screens */
-    }
-
-    header {
-        padding-top: 30px; /* Original padding for larger screens */
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    figure {
+        width: 90%; /* Smaller width on small screens */
     }
 }
