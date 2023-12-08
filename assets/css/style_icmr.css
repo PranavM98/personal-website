@@ -17,6 +17,9 @@ figure {
     max-width: 600px; /* Maximum width of the image */
     margin: 0 auto; /* Center the figure */
     margin-bottom: 20px; /* Space between figures */
+    display: flex; /* Using flexbox to center the content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 figure img {
@@ -37,4 +40,17 @@ figcaption {
     figure {
         width: 90%; /* Smaller width on small screens */
     }
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Adjust font size as needed */
+    color: #333;
 }
