@@ -118,13 +118,11 @@ body {
 }
 
 /* Recent Updates List */
-/* 1. Top‐level list: remove default bullets */
 .updates {
   list-style: none;
   margin: 1rem 0;
   padding: 0;
 }
-/* 2. Custom bullet for direct children */
 .updates > li {
   position: relative;
   padding-left: 1.5em;
@@ -140,7 +138,7 @@ body {
   color: #0066cc;
 }
 
-/* Nested list: restore normal discs and remove custom bullets */
+/* Nested list */
 .nested-updates {
   list-style: disc outside;
   margin: 0.5rem 0 0 1.5rem;
@@ -158,44 +156,32 @@ body {
 
 /* Publications styling */
 .pub-year {
-  margin-bottom: 1.5rem;  /* slightly less space between years */
+  margin-bottom: 1.5rem;
 }
 .pub-year h3 {
-  margin-bottom: 0.75rem; /* tighten the year heading */
+  margin-bottom: 0.75rem;
   color: #444;
 }
-
-/* Even tighter spacing for publication items */
 .publication-item {
-  margin-bottom: 0.75rem; /* less space between items */
+  margin-bottom: 0.75rem;
 }
-
-/* Reduce gap between each line within an item */
 .publication-item p {
   margin: 0.1rem 0;
 }
-
-/* Title line */
 .pub-title {
   font-size: 1.1rem;
   margin-bottom: 0.05rem;
 }
-
-/* Authors line */
 .pub-authors {
   font-size: 0.95rem;
   color: #666;
   margin: 0.05rem 0;
 }
-
-/* Venue line */
 .pub-venue {
   font-style: italic;
   margin-bottom: 0.1rem;
   color: #555;
 }
-
-/* Links line */
 .pub-links {
   margin: 0;
 }
@@ -207,19 +193,18 @@ body {
 .pub-links a:hover {
   border-color: #0066cc;
 }
+
 /* Photo Slideshow styling */
 #photo-slideshow {
   margin-top: 2rem;
   text-align: center;
 }
-
 .slideshow-container {
   position: relative;
   max-width: 600px;
   margin: 1rem auto;
   overflow: hidden;
 }
-
 .slideshow-container img {
   width: 100%;
   height: auto;
@@ -227,7 +212,6 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 /* Navigation arrows */
 .nav-arrow {
   position: absolute;
@@ -242,43 +226,32 @@ body {
   border-radius: 4px;
   user-select: none;
 }
-
 .nav-arrow.left  { left: 8px; }
 .nav-arrow.right { right: 8px; }
 .nav-arrow:hover {
   background: rgba(0,0,0,0.6);
 }
 
-
-
-/* Blog overview grid: always 5 columns, centered, with a gap */
+/* Blog overview grid */
 .blog-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  max-width: calc(5 * 200px + 4 * 1rem); /* 5 items at 200px each + gaps */
+  max-width: calc(5 * 200px + 4 * 1rem);
   margin: 0 auto;
   padding: 1rem 0;
 }
-
-/* Each blog card keeps a 200px width */
 .blog-item {
   width: 200px;
 }
-
-/* Thumbnails: 5:6 aspect ratio */
-/* Thumbnails: fixed 16:9 landscape, no cropping */
 .blog-item img {
   width: 100%;
-  aspect-ratio: 16 / 9;    /* 16:9 landscape */
-  object-fit: contain;     /* scale entire image into frame */
-  background: #f0f0f0;     /* light grey behind letterboxing */
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #f0f0f0;
   border-radius: 0.5rem;
   display: block;
 }
-
-
-/* Title and meta stay the same */
 .blog-item h3 {
   margin: 0.5rem 0 0.25rem;
   font-size: 1.1rem;
@@ -293,4 +266,70 @@ body {
 .blog-meta {
   font-size: 0.9rem;
   color: #666;
+}
+
+/* ────────────────────────────────────────────────────────────── */
+/* MOBILE‑FIRST & RESPONSIVE BREAKPOINTS                         */
+/* ────────────────────────────────────────────────────────────── */
+
+/* 1) Stack sidebar & main at tablet and below */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem;
+  }
+  body {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .content {
+    padding: 1rem;
+  }
+}
+
+/* 2) Collapse top‑nav links into vertical list */
+@media (max-width: 600px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* 3) Collapse blog grid to 2 columns */
+@media (max-width: 800px) {
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc(2 * 200px + 1 * 1rem);
+  }
+}
+
+/* 4) Collapse blog grid to 1 column */
+@media (max-width: 500px) {
+  .blog-list {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+}
+
+/* 5) Make slideshow full‑width and smaller arrows */
+@media (max-width: 600px) {
+  .slideshow-container {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+  .nav-arrow {
+    font-size: 1.25rem;
+    padding: 0.2rem 0.5rem;
+  }
 }
