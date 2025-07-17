@@ -1,0 +1,145 @@
+<!-- mids_graduation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI4TBI – Pranav Manjunath</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar (identical to index.html) -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/blogs/mids_graduation/Pranav_Photo1.png" alt="Pranav Manjunath" class="avatar">
+        <h2>Pranav Manjunath</h2>
+        <p class="bio" style="text-align:left; margin-left:0;">
+          PhD Candidate – Duke University <br>
+          MIDS – Duke University <br>
+          BE in CS – PESIT, Bangalore
+        </p>
+      </div>
+      <nav class="social-links">
+        <a href="https://www.tdunnlab.org"><span class="icon">🏫</span> <pre>t.Dunn Lab</pre></a>
+        <a href="https://www.linkedin.com/in/pranav-manjunath-3881b8144/" target="_blank" rel="noopener">
+          <img src="images/blogs/mids_graduation/LinkedIn.png" alt="LinkedIn" width="16" height="16"
+               style="vertical-align: middle; margin-right: 4px;">
+          <pre> LinkedIn</pre>
+        </a>
+        <a href="mailto:pranav.manjunath@duke.edu"><span class="icon">✉️</span> <pre>Email</pre></a>
+        <a href="https://scholar.google.com/citations?user=vB26SuAAAAAJ&hl=en">
+          <span class="icon">📑</span> <pre>Google Scholar</pre>
+        </a>
+        <a href="https://github.com/PranavM98"><span class="icon">💻</span> <pre>Github</pre></a>
+        <a
+        class="download-link"
+        href="files/Pranav_Official_Resume.pdf"
+        download="Pranav_Official_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="icon">📄</span>
+        <pre>CV</pre>
+      </a>
+
+
+      </nav>
+    </aside>
+
+    <!-- Main Content + Top Navigation -->
+    <div class="main">
+      <header class="top-nav">
+        <h1 class="site-title">Personal Website</h1>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../publications.html">Publications</a></li>
+          <li><a href="../ai4tbi.html">AI4TBI</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="#blog">Music</a></li>
+        </ul>
+      </header>
+
+      <!-- Blog‑style Article -->
+      <article class="content blog-page">
+        <h1>Keynote Speaker: MIDS Graduation 2025</h1>
+        <!-- <p class="post-meta">July 18, 2025 • by Pranav Manjunath</p> -->
+
+     
+
+       
+
+          <!-- Photo Slideshow Section -->
+    <section id="photo-slideshow" class="content blog-page">
+      <h2>Photos</h2>
+      <div class="slideshow-container">
+        <button class="nav-arrow left" id="prev">&larr;</button>
+        <img id="slideshow-image" alt="Slideshow image will appear here">
+        <button class="nav-arrow right" id="next">&rarr;</button>
+      </div>
+    </section>
+
+    <script>
+    (function() {
+        const slides = [
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3593.JPG',
+//   '../images/blogs/mids_graduation/pranav_photos/IMG_3594.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3595.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3597.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3598.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3599.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3600.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3601.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3602.JPG',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3608 2.jpg',
+  '../images/blogs/mids_graduation/pranav_photos/IMG_3608.JPG'
+  // …add more here as needed…
+];
+      const imgEl = document.getElementById('slideshow-image');
+      const prev  = document.getElementById('prev');
+      const next  = document.getElementById('next');
+      let idx     = 0;
+      let timer;
+
+      function show(i) {
+        idx = (i + slides.length) % slides.length;
+        imgEl.src = slides[idx];
+      }
+
+      function startAuto() {
+        timer = setInterval(() => show(idx + 1), 3000);
+      }
+
+      // init
+      if (!slides.length) return;
+      show(0);
+      startAuto();
+
+      // manual controls
+      prev.addEventListener('click', () => {
+        clearInterval(timer);
+        show(idx - 1);
+        startAuto();
+      });
+      next.addEventListener('click', () => {
+        clearInterval(timer);
+        show(idx + 1);
+        startAuto();
+      });
+    })();
+    </script>
+
+    <section class="post-intro">
+        <p>
+        In this keynote, I celebrate the enduring power of community and collaboration, drawing on my own journey from MIDS graduate to PhD candidate. I remind my peers that just as a K‑Nearest Neighbors model fails when K=0, so too do we falter without the support of mentors, classmates, and collaborators—whether we’re debugging code at 2 AM or sharing insights on capstone projects. By staying connected to one another, I emphasize, we can navigate whatever uncertainties lie ahead, just as our MIDS community helped me through the chaos of COVID and beyond.
+
+        I then share my “build for impact” mindset, illustrating how real‑world immersion—questioning where data comes from, shadowing clinicians, and understanding high‑stakes contexts—transforms models into tools that truly serve patients. I stress the importance of design, responsibility, fairness, and explainability, urging us all to develop AI that empowers rather than replaces human judgment. In closing, I distill my message into three guiding principles: lead with care, build with purpose, and never set K=0. 
+        </p>
+    </section>
+
+        <p><a href="index.html">← Back to Home</a></p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
