@@ -1,0 +1,174 @@
+<!-- mids_graduation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI4TBI – Pranav Manjunath</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar (identical to index.html) -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="../images/Pranav_Photo1.png" alt="Pranav Manjunath" class="avatar">
+        <h2>Pranav Manjunath</h2>
+        <p class="bio" style="text-align:left; margin-left:0;">
+          PhD Candidate – Duke University <br>
+          MIDS – Duke University <br>
+          BE in CS – PESIT, Bangalore
+        </p>
+      </div>
+      <nav class="social-links">
+        <a href="https://www.tdunnlab.org"><span class="icon">🏫</span> <pre>t.Dunn Lab</pre></a>
+        <a href="https://www.linkedin.com/in/pranav-manjunath-3881b8144/" target="_blank" rel="noopener">
+          <img src="../images/LinkedIn.png" alt="LinkedIn" width="16" height="16"
+               style="vertical-align: middle; margin-right: 4px;">
+          <pre> LinkedIn</pre>
+        </a>
+        <a href="mailto:pranav.manjunath@duke.edu"><span class="icon">✉️</span> <pre>Email</pre></a>
+        <a href="https://scholar.google.com/citations?user=vB26SuAAAAAJ&hl=en">
+          <span class="icon">📑</span> <pre>Google Scholar</pre>
+        </a>
+        <a href="https://github.com/PranavM98"><span class="icon">💻</span> <pre>Github</pre></a>
+        <a
+        class="download-link"
+        href="files/Pranav_Official_Resume.pdf"
+        download="Pranav_Official_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="icon">📄</span>
+        <pre>CV</pre>
+      </a>
+
+
+      </nav>
+    </aside>
+
+    <!-- Main Content + Top Navigation -->
+    <div class="main">
+      <header class="top-nav">
+        <h1 class="site-title">Personal Website</h1>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../publications.html">Publications</a></li>
+          <li><a href="../ai4tbi.html">AI4TBI</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="#blog">Music</a></li>
+        </ul>
+      </header>
+
+      <!-- Blog‑style Article -->
+      <article class="content blog-page">
+        <!-- <p class="post-meta">July 18, 2025 • by Pranav Manjunath</p> -->
+
+    
+    <section class="post-intro">
+          <h1>Building Clinical Co-Pilots: Personalizing Healthcare Through Evidence and Experience</h1>
+
+          <p>
+            Healthcare is full of high-stakes choices, such as deciding what to do with a patient with a traumatic brain injury in the emergency department. 
+            These calls must be made fast—and with as much knowledge as possible.
+          </p>
+          <p>
+            Yet, as research shows, many of these decisions still rely on individual heuristics, leading to variability in outcomes. 
+            What if clinicians had co-pilots—AI systems designed to augment them, by distilling the most relevant knowledge from both clinical evidence and similar past patients, right at the bedside?
+          </p>
+        
+          <hr>
+        
+          <h4>Why Similar Patients Matter</h4>
+          <p>
+            In our recent work on retrieval-augmented small language models (SLMs), we found that retrieving 
+            <em>similar patients</em> consistently improved predictive performance for ED disposition. 
+            By providing the model with real-world exemplars—patients who looked like the current one in terms of CT scans, vitals, and labs—we boosted sensitivity without sacrificing specificity.
+          </p>
+          <p>
+            This makes intuitive sense. Clinicians often lean on precedent: 
+            <em>“I once saw a patient like this, and here’s what happened.”</em> 
+            A system that can retrieve hundreds or thousands of prior cases, surface the most relevant ones, and present them in real time offers something human memory never could: scalable, evidence-aligned precedent.
+          </p>
+          <p>
+            And this value extends beyond clinicians. Imagine being a patient or caregiver, overwhelmed by the complexity of TBI. 
+            Seeing not only guideline-grounded recommendations, but also relatable case analogs (<em>“Here’s what happened to others like you”</em>) 
+            transforms medical information into something accessible and understandable. 
+            These systems can serve as educational tools, empowering shared decision-making and reducing the uncertainty that often defines serious diagnoses.
+          </p>
+        
+          <hr>
+        
+          <h4>Evidence Meets Experience</h4>
+          <p>
+            But precedent alone isn’t enough. Evidence-based practice (EBP) anchors care in systematic research and guidelines. 
+            Our framework unifies EBP with case-based reasoning (CBR), showing how the combination balances safety with personalization.
+          </p>
+          <ul>
+            <li><strong>CBR (similar patients):</strong> boosts sensitivity, reducing missed admissions.</li>
+            <li><strong>EBP (guidelines):</strong> improves specificity, ensuring decisions align with standards.</li>
+            <li><strong>Together:</strong> they complement each other, balancing personalization with standardization.</li>
+          </ul>
+          <p>
+            This is the essence of a clinical co-pilot: not to dictate decisions, but to rapidly distill the best knowledge 
+            (population-level evidence and patient-level precedent) so that clinicians can make informed calls when every second matters.
+          </p>
+        
+          <hr>
+        
+          <h4>Why a Co-Pilot? Learning From Coaches, Teachers, and Mentors</h4>
+          <p>
+            The NPR article 
+            <a href="https://www.npr.org/2011/09/27/140849085/pro-athletes-have-coaches-why-not-everyone-else" target="_blank">
+              <em>“Pro Athletes Have Coaches. Why Not Everyone Else?”</em>
+            </a> 
+            makes a compelling point: even at the highest level of performance, athletes rely on coaches to refine their craft. 
+            In music, too, we never stop learning, we continue to work with gurus and mentors throughout our journey.
+          </p>
+          <p>
+            Healthcare should be no different. Clinicians deserve co-pilots—systems that act as always-available coaches, 
+            offering perspective, evidence, and analogs that sharpen their judgment under pressure. 
+            They guide, contextualize, and support.
+          </p>
+        
+          <hr>
+        
+          <h4>Building the Future of Clinical Co-Pilots</h4>
+          <p>
+            I’m inspired by the work of groups like <strong>OpenEvidence</strong> and <strong>Atropos Health</strong>, 
+            who are advancing real-world evidence and evidence-based AI to make medicine more adaptive and personalized. 
+            My vision builds on this momentum:
+          </p>
+          <ul>
+            <li><strong>For clinicians:</strong> Co-pilots that distill guideline passages and real-world evidence into clear, actionable insights.</li>
+            <li><strong>For patients and caregivers:</strong> Educational interfaces that provide relatable case examples alongside evidence, 
+            making complex prognoses more transparent and understandable.</li>
+          </ul>
+          <p>
+            The goal is simple but transformative: to move beyond one-size-fits-all care and toward a precision health system 
+            that is evidence-aligned, context-aware, and personalized at scale.
+          </p>
+        
+          <hr>
+        
+          <h4>Closing Thoughts</h4>
+          <p>
+            As with music and sports, mastery in medicine is a lifelong pursuit. 
+            As engineers, we must work closely with patients, clinicians, and health systems to augment healthcare 
+            by designing human-centric tools and systems. 
+            I've realized that a huge part of my research should be in this intersection: 
+            qualitative and quantitative research, backed by human-centered design to build effective HealthAI systems.
+          </p>
+        
+          <div class="footer">
+            <p>Thumbnail Image created by Gemini Nano Banana.</p>
+          </div>
+        
+    </section>
+
+        <p><a href="index.html">← Back to Home</a></p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
