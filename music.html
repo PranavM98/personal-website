@@ -250,6 +250,18 @@
       border: 0;
       display: block;
     }
+    /* Google Drive's audio player needs real vertical room for its controls —
+       the 16:9 video ratio crams and clips them, so give playing audio cards
+       a fixed, comfortable height instead. */
+    .performance-thumb.audio.playing {
+      aspect-ratio: auto !important;
+      height: 150px !important;
+    }
+    /* Once something is playing, our own badge would sit on top of the
+       platform's native controls (e.g. Drive's expand icon) — hide it. */
+    .performance-thumb.playing ~ .platform-badge {
+      display: none;
+    }
 
     /* Info panel — sits below the thumbnail, always visible */
     .performance-info {
