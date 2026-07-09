@@ -255,24 +255,7 @@
        a fixed, comfortable height instead. */
     .performance-thumb.audio.playing {
       aspect-ratio: auto !important;
-      height: auto !important;
-      min-height: 56px !important;
-      padding: 0 .6rem;
-      display: flex;
-      align-items: center;
-    }
-    .native-audio-player {
-      width: 100%;
-      height: 40px;
-      display: block;
-    }
-    /* Strip the volume control out of the native player (Chrome/Safari/Edge).
-       Firefox's audio controls aren't a set of styleable pseudo-elements, so
-       this specific hide isn't possible there — a minor, unavoidable gap. */
-    .native-audio-player::-webkit-media-controls-volume-slider,
-    .native-audio-player::-webkit-media-controls-mute-button,
-    .native-audio-player::-webkit-media-controls-volume-control-container {
-      display: none !important;
+      height: 220px !important;
     }
     /* Once something is playing, our own badge would sit on top of the
        platform's native controls (e.g. Drive's expand icon) — hide it. */
@@ -852,25 +835,24 @@
                 thumb.classList.add('playing');
                 thumb.appendChild(iframe);
               } else {
-                // Google Drive's iframe preview embeds its own volume slider and
-                // "open in Drive" icon that we can't reach or restyle (cross-origin
-                // content). A native <audio> element is fully ours to control —
-                // no stray icons, and we can hide the volume UI outright.
+                // A native <audio src="..."> can't load Drive's direct-download
+                // link — Drive doesn't send the CORS headers browsers require
+                // for cross-origin media elements, so the request is blocked
+                // outright ("Error"). Drive's own iframe preview is the only
+                // playback method that works reliably for these files.
                 var driveId = card.getAttribute('data-drive-id') || '';
                 var match   = driveId.match(/\/d\/([^/?]+)/);
                 var id      = match ? match[1] : driveId;
 
-                var audio = document.createElement('audio');
-                audio.controls = true;
-                audio.autoplay = true;
-                audio.preload  = 'auto';
-                audio.src = 'https://drive.google.com/uc?export=download&id=' + id;
-                audio.className = 'native-audio-player';
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://drive.google.com/file/d/' + id + '/preview?autoplay=1';
+                iframe.allow = 'autoplay; encrypted-media';
+                iframe.setAttribute('allowfullscreen', '');
 
                 thumb.innerHTML = '';
                 thumb.classList.remove('has-thumb');
                 thumb.classList.add('playing');
-                thumb.appendChild(audio);
+                thumb.appendChild(iframe);
               }
 
               var badge = card.querySelector('.platform-badge');
