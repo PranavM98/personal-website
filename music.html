@@ -190,12 +190,12 @@
     /* ── Performance cards — overlay style ────────────── */
     .performance-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+      gap: .75rem;
     }
     .performance-card {
       position: relative;
-      border-radius: 10px;
+      border-radius: 8px;
       overflow: hidden;
       background: #000;
       cursor: pointer;
@@ -208,9 +208,10 @@
                   0 0 0 1.5px rgba(217,119,6,.4);
     }
 
-    /* thumbnail fills its own space */
+    /* thumbnail fills its own space — capped aspect ratio keeps cards compact */
     .performance-thumb {
-      min-height: 0; /* let aspect-ratio do the work */
+      min-height: 0;
+      aspect-ratio: 4 / 3;
     }
 
     /* Info panel — always shows title, artists/venue reveal on hover */
@@ -222,11 +223,11 @@
         rgba(5,5,15,.96)  0%,
         rgba(5,5,15,.7)   40%,
         transparent       100%);
-      padding: 2.25rem .9rem .75rem;
+      padding: 1.6rem .6rem .55rem;
       pointer-events: none; /* clicks pass through to card */
     }
     .performance-title {
-      font-size: .9rem;
+      font-size: .78rem;
       font-weight: 700;
       color: #fff;
       margin: 0;
@@ -237,37 +238,37 @@
     }
     .performance-artists,
     .performance-venue {
-      font-size: .73rem;
+      font-size: .66rem;
       color: rgba(255,255,255,.6);
       margin: 0;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       transition: max-height .3s ease, opacity .28s ease, margin-top .2s ease;
-      line-height: 1.45;
+      line-height: 1.4;
     }
     .performance-card:hover .performance-artists {
-      max-height: 3rem;
+      max-height: 3.4rem;
       opacity: 1;
-      margin-top: .28rem;
+      margin-top: .24rem;
     }
     .performance-card:hover .performance-venue {
       max-height: 1.6rem;
       opacity: .7;
-      margin-top: .14rem;
+      margin-top: .12rem;
     }
 
     /* Platform badge — top-right corner */
     .platform-badge {
       position: absolute;
-      top: .55rem;
-      right: .55rem;
+      top: .4rem;
+      right: .4rem;
       z-index: 6;
-      font-size: .62rem;
+      font-size: .56rem;
       font-weight: 800;
-      letter-spacing: .07em;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      padding: .18rem .44rem;
+      padding: .14rem .36rem;
       border-radius: 4px;
       pointer-events: none;
     }
@@ -373,6 +374,7 @@
       .music-hero   { padding: 2.25rem 1.25rem 2rem; }
       .hero-title   { font-size: 1.9rem; }
       .music-performances, .music-back { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .performance-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: .55rem; }
     }
   </style>
 </head>
