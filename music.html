@@ -195,9 +195,11 @@
     }
     .performance-card {
       position: relative;
+      display: flex;
+      flex-direction: column;
       border-radius: 8px;
       overflow: hidden;
-      background: #000;
+      background: #14161f;
       cursor: pointer;
       box-shadow: 0 4px 18px rgba(0,0,0,.55);
       transition: transform .22s ease, box-shadow .22s ease;
@@ -222,6 +224,8 @@
       padding-bottom: 0 !important;
       aspect-ratio: 16 / 9 !important;
       overflow: hidden;
+      background: #000;
+      flex-shrink: 0;
     }
     .performance-thumb .thumb-preview {
       position: absolute;
@@ -239,17 +243,12 @@
       justify-content: center;
     }
 
-    /* Info panel — always shows title, artists/venue reveal on hover */
+    /* Info panel — sits below the thumbnail, always visible */
     .performance-info {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 5;
-      background: linear-gradient(to top,
-        rgba(5,5,15,.96)  0%,
-        rgba(5,5,15,.7)   40%,
-        transparent       100%);
-      padding: 1.6rem .6rem .55rem;
-      pointer-events: none; /* clicks pass through to card */
+      position: static;
+      background: transparent;
+      padding: .55rem .65rem .7rem;
+      pointer-events: auto;
     }
     .performance-title {
       font-size: .78rem;
@@ -264,23 +263,13 @@
     .performance-artists,
     .performance-venue {
       font-size: .66rem;
-      color: rgba(255,255,255,.6);
-      margin: 0;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height .3s ease, opacity .28s ease, margin-top .2s ease;
+      color: rgba(255,255,255,.55);
+      margin: .2rem 0 0;
       line-height: 1.4;
     }
-    .performance-card:hover .performance-artists {
-      max-height: 3.4rem;
-      opacity: 1;
-      margin-top: .24rem;
-    }
-    .performance-card:hover .performance-venue {
-      max-height: 1.6rem;
-      opacity: .7;
-      margin-top: .12rem;
+    .performance-venue {
+      color: rgba(255,255,255,.35);
+      margin-top: .1rem;
     }
 
     /* Platform badge — top-right corner */
@@ -551,16 +540,17 @@
               </div>
             </div>
 
-            <!-- Kapi + Brindavana Saranga — Instagram reel -->
-            <div class="performance-card" data-platform="instagram" data-video-id="Ch0dUmljq5M" data-ig-type="reel">
+            <!-- Chinnanchiru Kiliye — Instagram -->
+            <div class="performance-card" data-platform="instagram" data-video-id="DR86es4jZ3p" data-ig-type="reel">
               <div class="performance-thumb video instagram">
                 <div class="thumb-icon">🎻</div>
                 <button class="play-btn ig-btn" aria-label="Open on Instagram">↗</button>
               </div>
               <span class="platform-badge ig">Instagram</span>
               <div class="performance-info">
-                <h3 class="performance-title">Kapi + Brindavana Saranga</h3>
-                <p class="performance-artists">Violin: Pranav Manjunath</p>
+                <h3 class="performance-title">Chinnanchiru Kiliye</h3>
+                <p class="performance-artists">Violin: Pranav Manjunath · Mridangam: Karthick Narayanan</p>
+                <p class="performance-venue">Composed by Mahakavi Subramanya Bharati</p>
               </div>
             </div>
 
@@ -673,17 +663,16 @@
               </div>
             </div>
 
-            <!-- Chinnanchiru Kiliye — Instagram -->
-            <div class="performance-card" data-platform="instagram" data-video-id="DR86es4jZ3p" data-ig-type="reel">
+            <!-- Kapi + Brindavana Saranga — Instagram reel -->
+            <div class="performance-card" data-platform="instagram" data-video-id="Ch0dUmljq5M" data-ig-type="reel">
               <div class="performance-thumb video instagram">
                 <div class="thumb-icon">🎻</div>
                 <button class="play-btn ig-btn" aria-label="Open on Instagram">↗</button>
               </div>
               <span class="platform-badge ig">Instagram</span>
               <div class="performance-info">
-                <h3 class="performance-title">Chinnanchiru Kiliye</h3>
-                <p class="performance-artists">Violin: Pranav Manjunath · Mridangam: Karthick Narayanan</p>
-                <p class="performance-venue">Composed by Mahakavi Subramanya Bharati</p>
+                <h3 class="performance-title">Kapi + Brindavana Saranga</h3>
+                <p class="performance-artists">Violin: Pranav Manjunath</p>
               </div>
             </div>
 
