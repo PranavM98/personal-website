@@ -789,8 +789,23 @@
                 var videoId = card.getAttribute('data-video-id') || '';
                 var start   = card.getAttribute('data-start') || '';
                 iframe.src  = 'https://www.youtube-nocookie.com/embed/' + videoId +
-                              '?autoplay=1&mute=1&rel=0' + (start ? '&start=' + start : '');
+                              '?autoplay=1&mute=1&rel=0&enablejsapi=1' +
+                              (start ? '&start=' + start : '') +
+                              '&origin=' + encodeURIComponent(window.location.origin);
                 iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+
+                // Autoplay-with-sound is blocked by browsers on cross-origin embeds,
+                // so we start muted (allowed) then ask the player to unmute itself
+                // right after — that's treated as a volume change, not a fresh
+                // autoplay request, so it's permitted in most browsers.
+                iframe.addEventListener('load', function () {
+                  setTimeout(function () {
+                    try {
+                      iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+                      iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+                    } catch (e) { /* ignore */ }
+                  }, 800);
+                });
               } else {
                 var driveId = card.getAttribute('data-drive-id') || '';
                 var match   = driveId.match(/\/d\/([^/?]+)/);
