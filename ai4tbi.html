@@ -6,6 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI4TBI – Pranav Manjunath</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* AI4TBI page: hero title + storyline sections */
+    .ai4tbi-hero {
+      font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #0f1f3d;
+      margin: 0.25rem 0 0.6rem;
+    }
+    .ai4tbi-hero span {
+      display: block;
+      font-size: 0.5em;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #4a5b78;
+      margin-top: 0.45rem;
+    }
+    .story {
+      position: relative;
+      margin: 2rem 0 0 0.5rem;
+      padding-left: 2rem;
+      border-left: 2px solid #d6dfeb;
+    }
+    .story .content { padding: 0; }
+    .story h2 {
+      position: relative;
+      font-size: 1.35rem;
+      margin-top: 2.75rem;
+      margin-bottom: 0.75rem;
+      color: #0f1f3d;
+    }
+    .story h2::before {
+      content: "";
+      position: absolute;
+      left: calc(-2rem - 8px);
+      top: 0.35em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #0066cc;
+      box-sizing: border-box;
+    }
+    @media (max-width: 600px) {
+      .story { margin-left: 0.25rem; padding-left: 1.25rem; }
+      .story h2::before { left: calc(-1.25rem - 8px); }
+    }
+  </style>
 </head>
 <body>
   <div class="layout">
@@ -62,9 +111,10 @@
 
       <!-- Blog‑style Article -->
       <article class="content blog-page">
-        <h1>AI4TBI: Discovering AI Applications for TBI Care</h1>
+        <h1 class="ai4tbi-hero">AI4TBI<span>Discovering AI Applications for TBI Care</span></h1>
         <!-- <p class="post-meta">July 18, 2025 • by Pranav Manjunath</p> -->
 
+        <div class="story">
         <section class="post-intro">
           <p>
             AI4TBI is a <a href="https://bassconnections.duke.edu/project/discovering-ai-applications-traumatic-brain-injury-care-2024-2025/"   target="_blank"
@@ -94,8 +144,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: #f0f0f0;
+            min-height: 0;
+            background: transparent;
           }
           img {
             max-width: 100%;
@@ -167,6 +217,7 @@
         <button class="nav-arrow right" id="next">&rarr;</button>
       </div>
     </section>
+        </div><!-- /.story -->
 
     <script>
     (function() {
